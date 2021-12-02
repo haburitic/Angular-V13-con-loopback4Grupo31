@@ -1,0 +1,28 @@
+<div class="col-md-12">
+  <div class="card card-container">
+    <form name ="form" #f="ngForm" novalidate>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email" required
+        minlength="3" maxlength="30" />
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" required
+        minlength="3" maxlength="30" />
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="rol">Rol</label>
+        <select id="rol" name="rol" class="form-control" [(ngModel)]="user.rol">
+          <option *ngFor="let rol of listaroles">{{rol.name}}</option>
+        </select>
+      </div>
+      <br>
+    <div class="form-group">
+      <button class="btn btn-primary btn-block" >Sign Up</button>
+    </div>
+    </form>
+  </div>
+</div>
