@@ -37,3 +37,6 @@ ng generate interface Rol
 
 ## creamos class
 ng generate class model/User
+
+## creamos class
+ng generate service service/user 

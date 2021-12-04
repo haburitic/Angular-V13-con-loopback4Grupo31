@@ -1,1 +1,31 @@
-<p>login works!</p>
+<div class="col-md-12">
+  <div class="card card-container">
+    <form name ="form" #f="ngForm" *ngIf="!isSuccessFull" novalidate (submit)="createUser()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email" required
+        minlength="3" maxlength="30" [(ngModel)]="user.email"
+        #email="ngModel"/>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" required
+        minlength="3" maxlength="30" [(ngModel)]="user.password"
+        #password="ngModel"/>
+      </div>
+      <br>
+      <br>
+    <div class="form-group">
+      <button class="btn btn-primary btn-block">Sign Up</button>
+    </div>
+    </form>
+    <br>
+    <div class="alert alert-success" role="alert" *ngIf="isSuccessFull">
+      A simple success alert—check it out!
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="isSignUpFailed" >
+      A simple danger alert—check it out!
+    </div>
+  </div>
+</div>
