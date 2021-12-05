@@ -31,12 +31,19 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ng generate component register
 ng generate component login
 ng generate component home
+ng generate component empleado
 
 ## creamos interface
 ng generate interface Rol
 
 ## creamos class
 ng generate class model/User
+ng generate class model/empleado
 
 ## creamos class
 ng generate service service/user 
+ng generate service service/token 
+ng generate service service/empleado 
+## guard
+ng generate guard helper/auth
+
