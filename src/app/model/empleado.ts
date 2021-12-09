@@ -1,13 +1,7 @@
 export class Empleado {
+ nombre: string | undefined ;
+ apellido: string | undefined ;
+ numeroDocumento: string | undefined ;
+ _id: string | undefined ;
 
-  offset:number= 0;
-  limit:number= 100;
-  skip:number=  0;
-  order:string='';
-  fields: {
-    nombre: true;
-    apellido: true;
-    numeroDocumento: true;
-    id: string;
-  } | undefined
 }

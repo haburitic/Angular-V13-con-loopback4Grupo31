@@ -20,7 +20,14 @@ constructor(private tokenService: TokenService){
       authReq=req.clone({
         headers:req.headers
         .append('Authorization','Bearer '+token)
-        .append('Content-Type','application/json'),        url: environment.urlBack+req.url
+        .append('Content-Type','application/json'),
+        url: environment.urlBack+req.url
+      });
+    }else{
+      authReq=req.clone({
+        headers:req.headers
+        .append('Content-Type','application/json'),
+        url: environment.urlBack+req.url
       });
     }
     return next.handle(authReq);

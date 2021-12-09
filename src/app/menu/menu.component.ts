@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from '../service/token.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private tokenService:TokenService) { }
 
   ngOnInit(): void {
+  }
+
+  sessionValida(): boolean{
+        if(this.tokenService.getToken()!=null){
+          return false;
+        }else{
+          return true;
+        }
   }
 
 }

@@ -10,46 +10,43 @@ import { TokenService } from '../service/token.service';
 })
 export class EmpleadoComponent implements OnInit {
 
-  empleado= new Empleado();
   constructor(
     private empleadoService:EmpleadoService,
     private tokenService:TokenService
   ) { }
 
   ngOnInit(): void {
-    this.ping();
+    this.consultarTodo();
   }
 
-  crearEmpleado(){
-    this.empleadoService.crear(this.empleado).subscribe({
-      next:(data)=>{
+  listaEmpleados: Empleado[]=[];
 
+  consultarTodo():void{
+    this.empleadoService.consultarTodo().subscribe({
+      next:(data:Empleado[])=>{
+        this.listaEmpleados=data;
       },
       error:(error)=>{
-        if(error.status==='401'){
-          this.tokenService.signOut();
-        }
-
+        console.log(error);
       },
       complete:()=>{
+        console.log("complete");
 
       }
     });
   }
 
-  ping(){
-    this.empleadoService.ping().subscribe({
+  eliminar(id:any):void{
+    this.empleadoService.eliminar(id).subscribe({
       next:(data)=>{
         console.log(data);
       },
       error:(error)=>{
-        if(error.status==='401'){
-          this.tokenService.signOut();
-        }
-
+        console.log(error);
       },
       complete:()=>{
-
+        console.log("complete");
+        this.consultarTodo();
       }
     });
   }

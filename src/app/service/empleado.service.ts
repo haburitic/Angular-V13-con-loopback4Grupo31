@@ -8,22 +8,23 @@ import { Empleado } from '../model/empleado';
 })
 export class EmpleadoService {
 
-
-
-
-
   constructor(private http: HttpClient) { }
 
+  consultarTodo(): Observable<any>{
+    return this.http.get('empleados');
+  }
+
   crear(empleado: Empleado): Observable<any>{
-    return this.http.post('signup',empleado);
+    return this.http.post('empleados',empleado);
   }
 
-  eliminar(empleado: Empleado): Observable<any>{
-    return this.http.get('users/login');
+  eliminar(id:string): Observable<any>{
+    return this.http.delete('empleados/'+id);
   }
 
-  ping(){
-    return this.http.get('ping');
-
+  modificar(empleado: Empleado): Observable<any>{
+    return this.http.put('empleados', empleado);
   }
+
+
 }

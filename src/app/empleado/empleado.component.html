@@ -1,2 +1,32 @@
 <p>empleado works!</p>
 <button (click)="dividir()">Calcular </button>
+
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">nombre</th>
+        <th scope="col">apellido</th>
+        <th scope="col">numeroDocumento</th>
+        <th scope="col">_id</th>
+        <th scope="col">Acciones</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let empleado of  listaEmpleados">
+        <td>{{empleado.nombre}}</td>
+        <td>{{empleado.apellido}}</td>
+        <td>{{empleado.numeroDocumento}}</td>
+        <td>{{empleado._id}}</td>
+        <td>
+          <button id="eliminar" type="button" (click)="eliminar(empleado._id)" >Eliminar</button>
+          <button>Editar</button>
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>

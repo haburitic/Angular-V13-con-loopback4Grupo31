@@ -44,6 +44,7 @@ ng generate class model/empleado
 ng generate service service/user 
 ng generate service service/token 
 ng generate service service/empleado 
+
 ## guard
 ng generate guard helper/auth
 

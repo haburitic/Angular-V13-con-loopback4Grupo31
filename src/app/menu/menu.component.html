@@ -13,11 +13,11 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/empleado" routerLink="empleado">Empleado</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item"  *ngIf="sessionValida()">
           <a class="nav-link active" aria-current="page" href="/login" routerLink="login">Login</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/register" routerLink="register">Register</a>
+        <li class="nav-item"  *ngIf="sessionValida()">
+          <a class="nav-link active" aria-current="page" href="/register" routerLink="register" >Register</a>
         </li>
 
       </ul>
